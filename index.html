@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="routeDemo">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Angular Demo</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<script src="angular.min.js"></script> 
+	<script src="angular-route.min.js"></script>
+	<script src="app.js"></script>
+	
+	<script>
+		document.write('<base href="' + document.location + '" />');
+	</script>
+</head>
+
+<body ng-controller="appController">
+	<div class="container">
+		<ul class="nav nav-pills">
+			<li ng-class="{active: isActive('/')}"><a href="#">Home</a></li>
+			<li ng-class="{active: isActive('/about')}"><a href="#/about">About</a></li>
+			<li ng-class="{active: isActive('/badlink')}"><a href="#/badlink" class="text-danger">Bad link</a></li>
+		</ul>
+		<div ng-view=""></div>
+	</div>
+</body>
+</html>
+
